@@ -6,7 +6,6 @@ async function SettingsPage() {
   return (
     <div>
       <h1>Settings Page</h1>
-      <h2>{JSON.stringify(session)}</h2>
       <form
         action={async () => {
           'use server';
@@ -16,6 +15,7 @@ async function SettingsPage() {
       >
         <button type="submit">Sign Out</button>
       </form>
+      <h2>{JSON.stringify(session)}</h2>
     </div>
   );
 }
