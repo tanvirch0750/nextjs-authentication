@@ -2,6 +2,7 @@ import { LoginButton } from '@/components/auth/LoginButton';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Poppins } from 'next/font/google';
+import Link from 'next/link';
 
 const font = Poppins({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function Home() {
               Sign in
             </Button>
           </LoginButton>
+          {/* <Link href="/auth/login">Sing In</Link> */}
         </div>
       </div>
     </main>
