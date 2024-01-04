@@ -47,7 +47,7 @@ function LoginForm() {
     startTransition(() => {
       login(values).then((data) => {
         setErrorMessage(data?.error);
-        // setSuccessMessage(data?.success);
+        setSuccessMessage(data?.success);
       });
     });
   };
