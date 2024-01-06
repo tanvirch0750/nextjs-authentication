@@ -1,12 +1,13 @@
 'use client';
 
+import { logout } from '@/actions/logout';
 import { useSession, signOut } from 'next-auth/react';
 
 function SettingsPage() {
   //const session = await auth(); //if server component
 
   const onClick = () => {
-    signOut();
+    logout();
   };
 
   const session = useSession();
