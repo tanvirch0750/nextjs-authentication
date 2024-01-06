@@ -20,6 +20,7 @@ import { FormError } from '../FormError';
 import { FormSuccess } from '../FormSuccess';
 import { login } from '@/actions/login';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 function LoginForm() {
   const [isPending, startTransition] = useTransition();
@@ -94,6 +95,14 @@ function LoginForm() {
                       disabled={isPending}
                     />
                   </FormControl>
+                  <Button
+                    size="sm"
+                    variant="link"
+                    asChild
+                    className="px-0 font-normal"
+                  >
+                    <Link href="/auth/reset">Forgot Password</Link>
+                  </Button>
                   <FormMessage />
                 </FormItem>
               )}
