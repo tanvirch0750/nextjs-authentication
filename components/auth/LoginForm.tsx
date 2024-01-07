@@ -29,6 +29,7 @@ function LoginForm() {
   const [showTwoFactor, setShowTwoFactor] = useState(false);
 
   const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get('callbackUrl');
 
   const urlError =
     searchParams.get('error') === 'OAuthAccountNotLinked'
@@ -48,7 +49,7 @@ function LoginForm() {
     setSuccessMessage('');
 
     startTransition(() => {
-      login(values)
+      login(values, callbackUrl)
         .then((data) => {
           if (data?.error) {
             form.reset();
